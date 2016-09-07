@@ -18,19 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-////    [self.view setEdgeFillColor: [UIColor redColor]];
+    [self.view setEdgeFillColor: [UIColor redColor]];
     // Do any additional setup after loading the view, typically from a nib.
+//    NSLog(@"view pan == %p", panGesture);
+
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                                                  action:@selector(pan:)];
     [self.view addGestureRecognizer:panGesture];
-    NSLog(@"view pan == %p", panGesture);
-
-//    [self.view addEdgeEffect];
+    NSLog(@"55    pan == %p", panGesture);
+    [self.view addEdgeEffect];
 
 
     for (UIGestureRecognizer *gesture in self.view.gestureRecognizers) {
         if ([gesture isKindOfClass:[UIPanGestureRecognizer class]]) {
-            NSLog(@"forin    pan == %p", panGesture);
+            NSLog(@"forin    pan == %p", gesture);
         }
     }
 
